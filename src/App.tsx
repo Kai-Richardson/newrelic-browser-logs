@@ -44,6 +44,11 @@ function App() {
         <button
           onClick={() => {
             //@ts-ignore
+            newrelic.log("my log message", {
+              level: "debug",
+              customAttributes: { myFavoriteApp: true },
+            });
+            //@ts-ignore
             newrelic.log("Global - Test Simple");
             log("Fn - Test Complex", LogLevel.DEBUG, {
               test: "2",
